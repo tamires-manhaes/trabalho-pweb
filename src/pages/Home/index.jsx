@@ -1,7 +1,11 @@
+import Container from '../../components/Container';
+
 export const Home = () => {
   return (
     <div className="homePage">
-      <span>hello from home</span>
+      <Container showMenu title="Home">
+        <h2>Home page</h2>
+      </Container>
     </div>
   );
 };
