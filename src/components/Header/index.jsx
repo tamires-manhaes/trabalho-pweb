@@ -1,15 +1,26 @@
 import React from 'react';
+import { useLoginContext } from '../../context/loginContext';
+import { Link, useHistory } from 'react-router-dom';
+import { BsPersonCircle } from 'react-icons/bs';
 import './styles.css';
-import Menu from '../Menu';
-import menu from '../../utils/menu';
 
 const Header = ({ title, showMenu }) => {
+  const history = useHistory();
+  const { login } = useLoginContext();
+
+  const goToLoginScreen = () => {
+    return history.push('/login');
+  };
   return (
     <header className="header">
-      <h2>{title}</h2>
+      <Link to="/">
+        <h2>{title}</h2>
+      </Link>
       <div className="sideContainer">
-        <Menu showMenu={showMenu} menu={menu} />
-        {/* <Login /> */}
+        <button onClick={goToLoginScreen}>
+          <BsPersonCircle size={18} />
+          <span>Login</span>
+        </button>
       </div>
     </header>
   );

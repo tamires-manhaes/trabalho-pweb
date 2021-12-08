@@ -1,10 +1,32 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 25px;
+  background: #000;
+  color: #fff;
+}
+.header a {
+  text-decoration: none;
+  color: #fff;
 }
 
-.header .sideContainer {
+.header .sideContainer button {
   display: flex;
   align-items: center;
+  outline: none;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  opacity: 0.9;
+  animation: opacity 0.2 ease-in-out;
+  cursor: pointer;
+}
+
+.header .sideContainer button:hover {
+  opacity: 1;
+}
+
+.header .sideContainer svg {
+  margin-right: 8px;
 }
