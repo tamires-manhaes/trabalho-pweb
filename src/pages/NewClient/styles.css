@@ -1,0 +1,41 @@
+.newClient {
+  width: 500px;
+  margin: 50px auto;
+}
+.newClient form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newClient form input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.newClient form label {
+  padding: 5px;
+  margin: 5px;
+}
+
+.newClient form select {
+  padding: 5px;
+  margin: 5px;
+}
+.newClient form .inputGroup {
+  display: flex;
+}
+
+.newClient form button {
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width50 {
+  width: 50%;
+}
