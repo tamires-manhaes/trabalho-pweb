@@ -1,0 +1,22 @@
+.newUserPage {
+  width: 350px;
+  height: 150px;
+  padding: 10px;
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newUserPage button {
+  width: 150px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+  border: 1px solid #fefefe;
+  cursor: pointer;
+  background: #808080;
+  color: #fafafa;
+}
