@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
 import './styles.css';
 
-const Header = ({ title, showMenu }) => {
+const Header = ({ title, showButton }) => {
   const history = useHistory();
   const { login } = useLoginContext();
 
@@ -17,10 +17,12 @@ const Header = ({ title, showMenu }) => {
         <h2>{title}</h2>
       </Link>
       <div className="sideContainer">
-        <button onClick={goToLoginScreen}>
-          <BsPersonCircle size={18} />
-          <span>Login</span>
-        </button>
+        {showButton && (
+          <button onClick={goToLoginScreen}>
+            <BsPersonCircle size={18} />
+            <span>Login</span>
+          </button>
+        )}
       </div>
     </header>
   );
