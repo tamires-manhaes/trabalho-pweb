@@ -1,0 +1,45 @@
+.newEmployee {
+  width: 500px;
+  margin: 50px auto;
+}
+.newEmployee form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newEmployee form input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.newEmployee form label {
+  padding: 5px;
+  margin: 5px;
+}
+
+.newEmployee form select {
+  padding: 5px;
+  margin: 5px;
+}
+.newEmployee form .inputGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newEmployee form button {
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.width100 {
+  width: calc(100% - 20px);
+}
+
+.width50 {
+  width: calc(50% - 25px);
+}
