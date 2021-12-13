@@ -1,10 +1,20 @@
 import Container from '../../components/Container';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './styles.css';
 
 const Login = () => {
+  const history = useHistory();
+
+  const redirectToHome = () => {
+    return history.push('/');
+  };
   return (
-    <Container title="Login">
+    <Container
+      title="Login"
+      onClick={redirectToHome}
+      showButton
+      buttonTittle="Voltar a home"
+    >
       <div className="loginPage">
         <form className="formLogin">
           <input type="text" placeholder="email ou cpf" />
