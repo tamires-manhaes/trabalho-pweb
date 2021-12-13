@@ -23,6 +23,10 @@
 }
 .newClient form .inputGroup {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .newClient form button {
@@ -33,9 +37,9 @@
 }
 
 .width100 {
-  width: 100%;
+  width: calc(100% - 20px);
 }
 
 .width50 {
-  width: 50%;
+  width: calc(50% - 25px);
 }
