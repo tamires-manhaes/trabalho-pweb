@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home';
 import Login from './pages/Login';
 import NewClient from './pages/NewClient';
+import NewEmployee from './pages/NewEmployee';
 import NewUser from './pages/NewUser';
 import { NotFound } from './pages/Page404';
 
@@ -14,8 +15,9 @@ const Routes = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/newUser" component={NewUser} />
         <Route exact path="/new/client" component={NewClient} />
-        <Route exact path="/new/employee" component={NotFound} />
+        <Route exact path="/new/employee" component={NewEmployee} />
         <Route exact path="/new/car" component={NotFound} />
+        <Route exact path="/car-details/:id" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
