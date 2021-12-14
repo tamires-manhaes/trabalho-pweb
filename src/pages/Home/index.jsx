@@ -29,24 +29,26 @@ export const Home = () => {
         buttonTittle="Login"
       >
         <ul className="carList">
-          {cars
-            ? cars.map((car) => {
-                return (
-                  <CarCard
-                    key={car.id}
-                    id={car.id}
-                    name={car.name}
-                    cor={car.cor}
-                    classificationGroup={car.classificationGroup.description}
-                    qtdSits={car.qtdSits}
-                    kmsDriven={car.kmsDriven}
-                    available={car.available}
-                    qtdFuel={car.qtdFuel}
-                    foto={car.foto}
-                  />
-                );
-              })
-            : ''}
+          {/* {cars ? (
+            cars.map((car) => {
+              return (
+                <CarCard
+                  key={car.id}
+                  id={car.id}
+                  name={car.name}
+                  cor={car.cor}
+                  classificationGroup={car.classificationGroup.description}
+                  qtdSits={car.qtdSits}
+                  kmsDriven={car.kmsDriven}
+                  available={car.available}
+                  qtdFuel={car.qtdFuel}
+                  foto={car.foto}
+                />
+              );
+            })
+          ) : (
+            <span>nenhum carro a ser exibido</span>
+          )} */}
         </ul>
       </Container>
     </div>
