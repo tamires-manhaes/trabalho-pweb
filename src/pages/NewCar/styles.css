@@ -1,20 +1,20 @@
-.newClient {
+.newCar {
   width: 700px;
   margin: 50px auto;
 }
-.newClient form {
+.newCar form {
   display: flex;
   flex-direction: column;
 }
 
-.newClient form input,
-.newClient form label,
-.newClient form select {
+.newCar form input,
+.newCar form label,
+.newCar form select {
   padding: 8px;
   margin: 5px;
 }
 
-.newClient form .inputGroup {
+.newCar form .inputGroup {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -22,28 +22,28 @@
   justify-content: space-between;
 }
 
-.newClient form .inputGroup input,
-.newClient form .inputGroup label,
-.newClient form .inputGroup select {
+.newCar form .inputGroup input,
+.newCar form .inputGroup label,
+.newCar form .inputGroup select {
   border-radius: 5px;
   border: 1px solid gray;
 }
 
-.newClient form button {
+.newCar form button {
   padding: 5px;
   margin: 5px auto;
   width: 50%;
   cursor: pointer;
 }
 
-.width100 {
+.inputGroup .width100 {
   width: calc(100% - 25px);
 }
 
-.width50 {
+.inputGroup .width50 {
   width: calc(50% - 30px);
 }
 
-.width33 {
-  width: calc(33% - 28px);
+.inputGroup .width33 {
+  width: calc(33% - 30px);
 }
