@@ -1,11 +1,8 @@
 import React from 'react';
-import { useLoginContext } from '../../context/loginContext';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Header = ({ title, showButton, onClick, buttonTitle }) => {
-  const { login } = useLoginContext();
-
   return (
     <header className="header">
       <Link to="/">
