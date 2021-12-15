@@ -1,0 +1,57 @@
+.newReservation {
+  width: 700px;
+  margin: 50px auto;
+}
+.newReservation form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newReservation form input,
+.newReservation form label,
+.newReservation form select {
+  padding: 8px;
+  margin: 5px;
+}
+.newReservation form label {
+  display: flex;
+}
+.newReservation form label input {
+  width: 100%;
+  position: relative;
+  margin: 0 5px;
+}
+.newReservation form .inputGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newReservation form .inputGroup input,
+.newReservation form .inputGroup label,
+.newReservation form .inputGroup select {
+  border-radius: 5px;
+  border: 1px solid gray;
+  background: transparent;
+}
+
+.newReservation form button {
+  padding: 5px;
+  margin: 5px auto;
+  width: 60%;
+  cursor: pointer;
+}
+
+.width100 {
+  width: calc(100% - 25px);
+}
+
+.width50 {
+  width: calc(50% - 30px);
+}
+
+.width33 {
+  width: calc(33% - 10px);
+}
