@@ -1,0 +1,49 @@
+.newClient {
+  width: 700px;
+  margin: 50px auto;
+}
+.newClient form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newClient form input,
+.newClient form label,
+.newClient form select {
+  padding: 8px;
+  margin: 5px;
+}
+
+.newClient form .inputGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newClient form .inputGroup input,
+.newClient form .inputGroup label,
+.newClient form .inputGroup select {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.newClient form button {
+  padding: 5px;
+  margin: 5px auto;
+  width: 50%;
+  cursor: pointer;
+}
+
+.width100 {
+  width: calc(100% - 25px);
+}
+
+.width50 {
+  width: calc(50% - 30px);
+}
+
+.width33 {
+  width: calc(33% - 28px);
+}
