@@ -1,5 +1,5 @@
 .newEmployee {
-  width: 500px;
+  width: 700px;
   margin: 50px auto;
 }
 .newEmployee form {
@@ -7,20 +7,13 @@
   flex-direction: column;
 }
 
-.newEmployee form input {
-  padding: 5px;
-  margin: 5px;
-}
-
-.newEmployee form label {
-  padding: 5px;
-  margin: 5px;
-}
-
+.newEmployee form input,
+.newEmployee form label,
 .newEmployee form select {
-  padding: 5px;
+  padding: 8px;
   margin: 5px;
 }
+
 .newEmployee form .inputGroup {
   display: flex;
   flex-wrap: wrap;
@@ -29,17 +22,29 @@
   justify-content: space-between;
 }
 
+.newEmployee form .inputGroup input,
+.newEmployee form .inputGroup label,
+.newEmployee form .inputGroup select {
+  border-radius: 5px;
+  border: 1px solid gray;
+  background: transparent;
+}
+
 .newEmployee form button {
   padding: 5px;
-  margin: 5px;
-  width: 100%;
+  margin: 5px auto;
+  width: 60%;
   cursor: pointer;
 }
 
 .width100 {
-  width: calc(100% - 20px);
+  width: calc(100% - 25px);
 }
 
 .width50 {
-  width: calc(50% - 25px);
+  width: calc(50% - 30px);
+}
+
+.width33 {
+  width: calc(33% - 28px);
 }
