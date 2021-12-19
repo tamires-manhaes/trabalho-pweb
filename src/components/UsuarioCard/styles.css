@@ -1,0 +1,26 @@
+.userCard {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+
+  margin: 10px;
+  padding: 10px;
+  width: calc(100% / 6 - 50px);
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.userCard h3 {
+  margin: 5px 0;
+}
+
+.userCard span {
+  margin: 5px 0;
+}
+
+.userCard button {
+  width: 100%;
+  margin: 5px auto;
+}
