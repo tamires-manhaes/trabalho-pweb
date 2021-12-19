@@ -1,5 +1,15 @@
+.homePage {
+  padding: 16px;
+}
+
+.cardsBox > h3 {
+  margin: 5px 15px;
+}
 .carList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px;
+  margin: 10px auto;
 }
