@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import CarDetails from './pages/CarDetails';
 import { Home } from './pages/Home';
 import Login from './pages/Login';
 import NewCar from './pages/NewCar';
@@ -20,7 +21,7 @@ const Routes = () => {
         <Route exact path="/new/employee" component={NewEmployee} />
         <Route exact path="/new/car" component={NewCar} />
         <Route exact path="/new/reservation" component={NewReservation} />
-        <Route exact path="/car-details/:id" component={NotFound} />
+        <Route exact path="/car-details/:id" component={CarDetails} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
