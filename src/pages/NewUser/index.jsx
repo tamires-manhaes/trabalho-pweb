@@ -17,10 +17,11 @@ const NewUser = () => {
       buttonTittle="Voltar a home"
     >
       <div className="newUserPage">
-        <button onClick={() => history.push('/new/client')}>Cliente</button>
+        <button onClick={() => history.push('/new/client')}>Novo Cliente</button>
         <button onClick={() => history.push('/new/employee')}>
-          Funcionário
+          Novo Funcionário
         </button>
+        <button onClick={() => history.push('/new/car')}>Novo Veículo</button>
       </div>
     </Container>
   );
