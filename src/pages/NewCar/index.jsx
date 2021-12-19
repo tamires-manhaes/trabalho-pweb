@@ -18,6 +18,7 @@ const NewCar = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const data = {
       placa,
       cor,
@@ -25,8 +26,6 @@ const NewCar = () => {
       renavan,
       tipoDeVeiculo: parseInt(tipoVeiculo, 10),
     };
-
-    console.log(data);
 
     try {
       await api.post('/veiculos', data);
@@ -44,6 +43,7 @@ const NewCar = () => {
       buttonTittle="Voltar a home"
     >
       <div className="newCar">
+        <h3>Cadastro de Veículo</h3>
         <form onSubmit={handleSubmit}>
           <div className="inputGroup">
             <input
