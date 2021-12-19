@@ -37,14 +37,14 @@
   cursor: pointer;
 }
 
-.width100 {
+.inputGroup .width100 {
   width: calc(100% - 25px);
 }
 
-.width50 {
+.inputGroup .width50 {
   width: calc(50% - 30px);
 }
 
-.width33 {
-  width: calc(33% - 28px);
+.inputGroup .width33 {
+  width: calc(33% - 26px);
 }
