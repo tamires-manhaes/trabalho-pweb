@@ -3,6 +3,12 @@ import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Container from '../../components/Container';
 import api from '../../service/index';
+import {
+  getCarBrand,
+  getCarDoors,
+  getCarModel,
+  getCarType,
+} from '../../utils/car';
 import './styles.css';
 
 const CarDetails = () => {
@@ -10,16 +16,24 @@ const CarDetails = () => {
   const [car, setCar] = useState({});
   let { id } = useParams();
 
+  const redirectHome = () => {
+    return history.push('/');
+  };
+
+  const deleteCar = () => {
+    api.delete(`/veiculos/${id}`).then(history.push('/'));
+  };
+
   useEffect(() => {
     api.get(`/veiculos/${id}`).then((response) => {
-      console.log(response.data);
       setCar(response.data);
     });
   }, [id]);
 
-  const redirectHome = () => {
-    return history.push('/');
-  };
+  let marca = getCarBrand(car?.marcaDoVeiculo);
+  let modelo = getCarModel(car?.modeloDeVeiculo);
+  let qtdPortas = getCarDoors(car?.portasDoVeiculo);
+  let tipo = getCarType(car?.tipoDeVeiculo);
 
   return (
     <Container
@@ -30,18 +44,17 @@ const CarDetails = () => {
     >
       <div className="carDetails">
         <h3>
-          {car.marcaDoVeiculo}
-          {car.modeloDeVeiculo}
+          {marca} {modelo}
         </h3>
 
         <div className="row">
           <strong>Qtd portas:</strong>
-          <span>{car.portasDoVeiculo}</span>
+          <span>{qtdPortas}</span>
         </div>
 
         <div className="row">
           <strong>Tipo:</strong>
-          <span>{car.tipoDeVeiculo}</span>
+          <span>{tipo}</span>
         </div>
 
         <div className="row">
@@ -62,6 +75,10 @@ const CarDetails = () => {
         <div className="row">
           <strong>Chassi:</strong>
           <span>{car.chassi}</span>
+        </div>
+
+        <div className="row">
+          <button onClick={deleteCar}>Deletar este veículo</button>
         </div>
       </div>
     </Container>
