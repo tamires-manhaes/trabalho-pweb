@@ -36,7 +36,6 @@ export const Home = () => {
   useEffect(() => {
     setUsersLoading(true);
     api.get('/clientes').then((response) => {
-      console.log(response.data);
       setUsers(response.data);
       setUsersLoading(false);
     });

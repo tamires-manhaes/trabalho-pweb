@@ -20,7 +20,6 @@ const EmployeeDetails = () => {
 
   useEffect(() => {
     api.get(`/funcionarios/${id}`).then((response) => {
-      console.log(response.data);
       setEmployee(response.data);
     });
   }, [id]);
