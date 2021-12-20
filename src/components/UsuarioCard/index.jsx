@@ -2,26 +2,22 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './styles.css';
 
-const UserCard = ({
-  id,
-  nome,
-  email,
-  matricula,
-  login
-}) => {
+const UserCard = ({ id, nome, email, cnh, cpf, rg }) => {
   const history = useHistory();
 
-  const redirectToDetails = (id) => {
-    return history.push(`/car-details/${id}`);
-  };
+  // const redirectToDetails = (id) => {
+  //   return history.push(`/user-details/${id}`);
+  // };
 
   return (
     <li className="userCard">
-      <h3>{nome}</h3>
-      <span>email: {email}</span>
-      <span>matricula: {matricula}</span>
-      <span>login: {login}</span>
-      <button onClick={() => redirectToDetails(id)}>Mais informações</button>
+      <div className="infos">
+        <h3>{nome}</h3>
+        <span>email: {email}</span>
+        <span>cnh: {cnh}</span>
+        <span>cpf: {cpf}</span>
+        <span>rg: {rg}</span>
+      </div>
     </li>
   );
 };
