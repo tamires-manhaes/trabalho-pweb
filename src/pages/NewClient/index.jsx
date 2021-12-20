@@ -23,6 +23,9 @@ const NewClient = () => {
   const [rg, setRg] = useState('');
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  const [funcionario, setFuncionario] = useState(0);
+
+  const [funcionarios, setFuncionarios] = useState([]);
 
   const redirectToHome = () => {
     return history.push('/');
@@ -36,42 +39,42 @@ const NewClient = () => {
       });
   }, []);
 
+  useEffect(() => {
+    api.get('/funcionarios').then((response) => setFuncionarios(response.data));
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const data = {
-  
-        cnh,
-        cpf,
-        email,
-        endereco: {
-          bairro,
-          cep,
-          cidade,
-          complemento,
-         
-          logradouro,
-          numero,
-          uf,
-        },
-        
-        matricula,
-        nome,
-        rg,
-    
-     
+      cnh,
+      cpf,
+      email,
+      endereco: {
+        bairro,
+        cep,
+        cidade,
+        complemento,
+        logradouro,
+        numero,
+        uf,
+      },
+      id: parseInt(funcionario, 10),
+      matricula,
+      nome,
+      rg,
       login,
       senha,
-    }
+    };
 
     try {
-      await api.post('/usuarios', data);
+      await api.post('/clientes', data);
       history.push('/');
     } catch (e) {
-      console.log(e)
+      console.log(e);
       alert('Erro ao cadastrar, tente novamente', e);
     }
-  }
+  };
 
   return (
     <Container
@@ -81,26 +84,74 @@ const NewClient = () => {
       buttonTittle="Voltar a home"
     >
       <div className="newClient">
-      <h3>Cadastro de Clientes</h3>
+        <h3>Cadastro de Clientes</h3>
         <form onSubmit={handleSubmit}>
           <div className="inputGroup">
-            <input type="text" value={nome} onChange={e=>setNome(e.target.value)} placeholder="nome" className="width50" />
-            <input type="text" value={email} onChange={e=>setEmail(e.target.value)} placeholder="email" className="width50" />
+            <input
+              type="text"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              placeholder="nome"
+              className="width50"
+            />
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email"
+              className="width50"
+            />
           </div>
           <div className="inputGroup">
-            <input type="text" value={cpf} onChange={e=>setCpf(e.target.value)} placeholder="cpf" className="width33" />
-            <input type="text" value={rg} onChange={e=>setRg(e.target.value)} placeholder="rg" className="width33" />
-            <input type="text" value={cnh} onChange={e=>setCnh(e.target.value)} placeholder="cnh" className="width33" />
+            <input
+              type="text"
+              value={cpf}
+              onChange={(e) => setCpf(e.target.value)}
+              placeholder="cpf"
+              className="width33"
+            />
+            <input
+              type="text"
+              value={rg}
+              onChange={(e) => setRg(e.target.value)}
+              placeholder="rg"
+              className="width33"
+            />
+            <input
+              type="text"
+              value={cnh}
+              onChange={(e) => setCnh(e.target.value)}
+              placeholder="cnh"
+              className="width33"
+            />
           </div>
           <div className="inputGroup">
-            <input type="text" value={logradouro} onChange={e=>setLogradouro(e.target.value)} placeholder="logradouro" className="width100" />
+            <input
+              type="text"
+              value={logradouro}
+              onChange={(e) => setLogradouro(e.target.value)}
+              placeholder="logradouro"
+              className="width100"
+            />
           </div>
           <div className="inputGroup">
-            <input type="text" value={bairro} onChange={e=>setBairro(e.target.value)} placeholder="bairro" className="width50" />
-            <input type="text" value={cidade} onChange={e=>setCidade(e.target.value)} placeholder="cidade" className="width50" />
+            <input
+              type="text"
+              value={bairro}
+              onChange={(e) => setBairro(e.target.value)}
+              placeholder="bairro"
+              className="width50"
+            />
+            <input
+              type="text"
+              value={cidade}
+              onChange={(e) => setCidade(e.target.value)}
+              placeholder="cidade"
+              className="width50"
+            />
           </div>
           <div className="inputGroup">
-            <select onChange={e=>setUf(e.target.value)} className="width33">
+            <select onChange={(e) => setUf(e.target.value)} className="width33">
               <option>Estado</option>
               {ufs ? (
                 ufs.map((uf) => (
@@ -112,15 +163,54 @@ const NewClient = () => {
                 <option>nenhum</option>
               )}
             </select>
-            <input type="text" value={cep} onChange={e=>setCep(e.target.value)} placeholder="cep" className="width33" />
-            <input type="text" value={numero} onChange={e=>setNumero(e.target.value)} placeholder="numero" className="width33" />
+            <input
+              type="text"
+              value={cep}
+              onChange={(e) => setCep(e.target.value)}
+              placeholder="cep"
+              className="width33"
+            />
+            <input
+              type="text"
+              value={numero}
+              onChange={(e) => setNumero(e.target.value)}
+              placeholder="numero"
+              className="width33"
+            />
           </div>
           <div className="inputGroup">
-            <input type="text" value={complemento} onChange={e=>setComplemento(e.target.value)} placeholder="complemento" className="width100" />
+            <input
+              type="text"
+              value={complemento}
+              onChange={(e) => setComplemento(e.target.value)}
+              placeholder="complemento"
+              className="width100"
+            />
           </div>
           <div className="inputGroup">
-            <input type="text" value={login} onChange={e=>setLogin(e.target.value)} placeholder="login" className="width50" />
-            <input type="password" value={senha} onChange={e=>setSenha(e.target.value)} placeholder="senha" className="width50" />
+            <input
+              type="text"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+              placeholder="login"
+              className="width33"
+            />
+            <input
+              type="password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              placeholder="senha"
+              className="width33"
+            />
+            <select
+              className="width33"
+              onChange={(e) => setFuncionario(e.target.value)}
+            >
+              <option>Funcionario</option>
+              {funcionarios.map((func) => {
+                return <option value={func.id}>{func.nome}</option>;
+              })}
+            </select>
           </div>
           <div className="inputGroup">
             <button type="submit">Cadastrar</button>
