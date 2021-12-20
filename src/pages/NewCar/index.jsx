@@ -9,7 +9,7 @@ const NewCar = () => {
   const [placa, setPlaca] = useState('');
   const [cor, setCor] = useState('');
   const [chassi, setChassi] = useState('');
-  const [renavan, setRenavan] = useState('');
+  const [renavam, setRenavam] = useState('');
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
   const [qtdPortas, setQtdPortas] = useState('');
@@ -26,7 +26,7 @@ const NewCar = () => {
       placa,
       cor,
       chassi,
-      renavan,
+      renavam,
       tipoDeVeiculo: parseInt(tipoVeiculo, 10),
       marcaDoVeiculo: marca,
       modeloDeVeiculo: modelo,
@@ -63,8 +63,8 @@ const NewCar = () => {
             <input
               type="text"
               required
-              value={renavan}
-              onChange={(e) => setRenavan(e.target.value)}
+              value={renavam}
+              onChange={(e) => setRenavam(e.target.value)}
               placeholder="renavan"
               className="width33"
             />
@@ -124,12 +124,12 @@ const NewCar = () => {
               className="width50"
             >
               <option>Modelo</option>
-              <option value="3008">3008</option>
-              <option value="208">208</option>
+              <option value="PEUGEOT3008">3008</option>
+              <option value="PEUGEOT208">208</option>
               <option value="FOX">Fox</option>
               <option value="SAVEIRO">Saveiro</option>
-              <option value="FIT">Fit</option>
-              <option value="CIVIC">Civic</option>
+              <option value="HONDAFIT">Fit</option>
+              <option value="HONDACIVIC">Civic</option>
             </select>
           </div>
           <div className="inputGroup">
