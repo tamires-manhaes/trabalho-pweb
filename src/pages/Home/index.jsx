@@ -35,7 +35,8 @@ export const Home = () => {
 
   useEffect(() => {
     setUsersLoading(true);
-    api.get('/usuarios').then((response) => {
+    api.get('/clientes').then((response) => {
+      console.log(response.data);
       setUsers(response.data);
       setUsersLoading(false);
     });
@@ -67,6 +68,7 @@ export const Home = () => {
                     tipoVeiculo={car.tipoDeVeiculo}
                     marca={car.marcaDoVeiculo}
                     modelo={car.modeloDeVeiculo}
+                    qtdPortas={car.portasDoVeiculo}
                   />
                 );
               })
@@ -99,7 +101,7 @@ export const Home = () => {
         </div>
 
         <div className="cardsBox">
-          <h3>Funcionarios disponíveis</h3>
+          <h3>Lista de Clientes</h3>
           {usersLoading ? <Loader /> : <></>}
           <ul className="carList">
             {users ? (
@@ -108,15 +110,16 @@ export const Home = () => {
                   <UsuarioCard
                     key={user.id}
                     id={user.id}
-                    nome={user?.funcionario?.nome}
-                    email={user?.funcionario?.email}
-                    matricula={user?.funcionario?.matricula}
-                    login={user?.login}
+                    nome={user?.nome}
+                    email={user?.email}
+                    cnh={user?.cnh}
+                    cpf={user?.cpf}
+                    rg={user?.rg}
                   />
                 );
               })
             ) : (
-              <span>nenhum carro a ser exibido</span>
+              <span>nenhum cliente a ser exibido</span>
             )}
           </ul>
         </div>
